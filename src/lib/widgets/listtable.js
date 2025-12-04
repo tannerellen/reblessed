@@ -176,7 +176,7 @@ ListTable.prototype.setData = function(rows) {
 
 ListTable.prototype._select = ListTable.prototype.select;
 ListTable.prototype.select = function(i) {
-  if (i === 0) {
+  if (i <= 0) {
     i = 1;
   }
   if (i <= this.childBase) {

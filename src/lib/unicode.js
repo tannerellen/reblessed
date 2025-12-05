@@ -120,12 +120,13 @@ exports.charWidth = function(str, i) {
 
   // tab
   if (point === 0x09) {
-    if (!exports.blessed) {
-      exports.blessed = require('../');
-    }
-    return exports.blessed.screen.global
-      ? exports.blessed.screen.global.tabc.length
-      : 8;
+    return 4; // Hardcode 4 character width tab. Not sure why the require is here.
+    // if (!exports.blessed) {
+    //   exports.blessed = require('../');
+    // }
+    // return exports.blessed.screen.global
+    //   ? exports.blessed.screen.global.tabc.length
+    //   : 8;
   }
 
   // 8-bit control characters (2-width according to unicode??)

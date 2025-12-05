@@ -4,6 +4,7 @@
  * https://github.com/chjj/tng
  */
 
+const blessedColors = require('../lib/colors');
 var fs = require('fs')
   , util = require('util')
   , path = require('path')
@@ -29,7 +30,7 @@ function PNG(file, options) {
   if (!file) throw new Error('no file');
 
   this.options = options || {};
-  this.colors = options.colors || require('blessed/lib/colors');
+  this.colors = options.colors || blessedColors;
   this.optimization = this.options.optimization || 'mem';
   this.speed = this.options.speed || 1;
 
